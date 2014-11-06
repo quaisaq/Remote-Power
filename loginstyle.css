@@ -22,17 +22,13 @@
 }
 
 /* ## HEADER ## */
-
 header {
+	opacity: 0.8;
+	pointer-events: none;
 	padding: 20px;
 	background: #444;
 	font-family: 'Open Sans';
 	height: 38px;
-}
-
-header.disabled {
-	opacity: 0.8;
-	pointer-events: none;
 }
 
 header ul {
@@ -45,12 +41,8 @@ header ul {
 header li {
 	float: left;
 	margin-right: 10px;
-}
-
-header a {
 	display: block;
-	border-radius: 20px;
-	color: #fff;
+	color: #aaa;
 	font-size: 14px;
 	padding: 10px 20px;
 	line-height: 18px;
@@ -58,16 +50,7 @@ header a {
 	text-transform: uppercase;
 }
 
-header.disabled a {
-	color: #aaa;
-}
-
-header a:hover {
-	background: #363636;
-}
-
-header a.active, header a:active {
-	background: #2f2f2f;
+header a {
 }
 
 /* ## WRAPPER ## */
@@ -89,12 +72,13 @@ header a.active, header a:active {
 }
 
 /* ### CONTENT ### */
-#innerback{
-	margin-top: 20px;
+#loginback{
+	margin-top: 100px;
 	float: right;
+	margin-right: 100px;
 	background-color: #ddf0da;
-	min-height: 550px;
-	width: 600px;
+	height: 200px;
+	width: 400px;
 }
 
 /* # HELPERS # */
