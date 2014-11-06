@@ -34,7 +34,15 @@
 				<div class="clear"></div>
             </div>
 			<div id="loginback">
-				Brugernavn:
+				<form action="/login.php" method="POST">
+					<div class="inputtop">Brugernavn:</div>
+					<input name="user" class="text">
+					
+					<div class="inputtop">Password:</div>
+					<input name="pass" type="password" class="text">
+					
+					<input type="submit" class="submit" value="Log ind">
+				</form>
 			</div>
 			<div class="clear"></div>
         </div>

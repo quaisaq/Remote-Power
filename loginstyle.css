@@ -74,11 +74,12 @@ header a {
 /* ### CONTENT ### */
 #loginback{
 	margin-top: 100px;
-	float: right;
 	margin-right: 100px;
+	padding: 20px;
+	float: right;
 	background-color: #ddf0da;
-	height: 200px;
-	width: 400px;
+	font-family: 'Open Sans';
+	width: 360px;
 }
 
 /* # HELPERS # */
@@ -88,3 +89,49 @@ header a {
 
 /* # GLOBALS # */
 * { margin: 0; padding: 0; }
+#loginback input.text {
+	padding: 1px 5px;
+	height: 40px;
+	width: 100%;
+	color: #222;
+	border: 1px solid #fff;
+	font-family: "trebuchet ms";
+	outline: none;
+	margin-bottom: 10px;
+}
+
+#loginback input.submit {
+	display: inline-block;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	font-family: "trebuchet ms";
+	padding: .5em 2em .55em;
+	text-shadow: 0 1px 1px rgba(0,0,0,0.3);
+	border-radius: .5em;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+	
+	color: #f7ffed;
+	border: 1px solid #538312;
+	background: #64991e;
+	background: linear-gradient(to bottom, #7db72f 0, #4e7d0e 100%);		
+	float: right;
+}
+#loginback input.submit:hover {
+	background: #538018;
+	background: linear-gradient(to bottom, #6b9d28 0, #436b0c 100%);
+}
+#loginback input.submit:active {
+	position: relative;
+	background: linear-gradient(to bottom, #4e7d0e 0, #7db72f 100%);
+	top: 1px;
+	color: #a9c08c;
+}
+
+.inputtop {
+	border-top-left-radius: 10px;
+	padding-left: 5px;
+	color: #555;
+	background: linear-gradient(to right, #fff 30%, rgba(255,255,255,0) 50%);
+}
