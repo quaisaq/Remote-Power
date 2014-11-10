@@ -1,5 +1,5 @@
 ﻿0=Køkken
-1=Badeværelse
-2=Værelse
-3=Værelse
-4=Stue
+1=Værelse 2
+2=Værelse 1
+3=Stue
+4=Badeværelse

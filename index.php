@@ -34,11 +34,11 @@
 				<img src="images/grundplan.png" class="house" usemap="#house">
 				<map name="house" id="house">
 					<area shape="rect" alt="Køkken" href="javascript:toggleSocket(0)">
-					<area shape="rect" alt="Badeværelse" href="javascript:toggleSocket(1)">
+					<area shape="rect" alt="Værelse" href="javascript:toggleSocket(1)">
 					<area shape="rect" alt="Værelse" href="javascript:toggleSocket(2)">
-					<area shape="rect" alt="Værelse" href="javascript:toggleSocket(3)">
-					<area shape="rect" alt="Stue" href="javascript:toggleSocket(4)">
-					<area shape="rect" alt="Stue" href="javascript:toggleSocket(4)">
+					<area shape="rect" alt="Stue" href="javascript:toggleSocket(3)">
+					<area shape="rect" alt="Stue" href="javascript:toggleSocket(3)">
+					<area shape="rect" alt="Badeværelse" href="javascript:toggleSocket(4)">
 				</map>
 			</div>
         </div>

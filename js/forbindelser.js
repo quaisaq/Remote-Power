@@ -36,7 +36,7 @@ $(function(){
 			
 			if (startDrag == parseInt(toggler.css('left'))) {
 				var toggleTo = (parseInt(toggler.css('left')) < max / 2);
-				$.post("toggleSocket.php", "area=" + md + '=' + (toggleTo ? 
+				$.get("toggleSocket.php?area=" + md + '=' + (toggleTo ? 
 				'1' : '0'), function(d){
 					if (d == "OK") {
 						if (toggleTo) {
@@ -52,7 +52,7 @@ $(function(){
 			}
 			else {
 				var toggleTo = (parseInt(toggler.css('left')) < max / 2);
-				$.post("toggleSocket.php", "area=" + md + '=' + (toggleTo ? 
+				$.get("toggleSocket.php?area=" + md + '=' + (toggleTo ? 
 				'1' : '0'), function(d){
 					if (d == "OK") {
 						if (toggleTo) {

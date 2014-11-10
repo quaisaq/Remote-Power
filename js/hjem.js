@@ -2,8 +2,8 @@ var sockets = new Array(false, false, false, false, false);
 var canvas = null;
 var ctx = null;
 var canvasSize = new Array(0, 0);
-var rectSizes = new Array(new Array(0,0,233,139), new Array(404,0,560,280), new Array(328,281,559,466), new Array(0,281,232,466), new Array(0,140,403,280), new Array(234,0,403,140));
-var rectIndexes = new Array(0, 1, 2, 3, 4, 4);
+var rectSizes = new Array(new Array(0,0,233,139), new Array(0,281,232,466), new Array(328,281,559,466), new Array(0,140,403,280), new Array(234,0,403,140), new Array(404,0,560,280));
+var rectIndexes = new Array(0, 1, 2, 3, 3, 4);
 
 $(function(){
 	canvas = document.getElementById('grundplansCanvas');
@@ -37,7 +37,7 @@ $(function(){
 
 function toggleSocket(i){
 	var toggleTo = !sockets[i];
-	$.post('toggleSocket.php', 'area=' + i + '=' + (toggleTo ? "1" : "0"), function(d){
+	$.get('toggleSocket.php?area=' + i + '=' + (toggleTo ? "1" : "0"), function(d){
 		if (d == "OK") {
 			sockets[i] = toggleTo;
 			drawSocket(i);

@@ -10,4 +10,4 @@ RewriteCond %{REQUEST_URI}			!^\/m\/
 RewriteCond %{HTTP:Cookie}			!\smobileRedirect=0(;|$)
 RewriteRule ^ m%{REQUEST_URI} [R,L]
 
-RewriteRule ^/?([a-z]+)$ $1.php [L]
+RewriteRule ^/?([a-zA-Z]+)$ $1.php [L]

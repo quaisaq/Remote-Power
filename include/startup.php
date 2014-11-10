@@ -1,6 +1,6 @@
 <?php
 	session_start();
 	if ($_SESSION['LOGGEDIN'] != 1) {
-		Header('Location: ./login');
+		Header('Location: ./login.php');
 	}
 ?>

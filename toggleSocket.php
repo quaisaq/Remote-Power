@@ -1,6 +1,6 @@
 <?php
-	if (isset($_POST['area'])) {
-		$exploded = explode('=', $_POST['area']);
+	if (isset($_GET['area'])) {
+		$exploded = explode('=', $_GET['area']);
 		$i = $exploded[0];
 		$file = file('database/online.txt', FILE_SKIP_EMPTY_LINES);
 		$arr = Array();
@@ -19,7 +19,7 @@
 			
 			// send command to Python
 			exec("cd /var/www/remotepower/");
-			exec("./wrapper " . $i . " " . $arr[$i]);
+			exec("sudo ./wrapper " . ($i + 1) . " " . $arr[$i]);
 			
 			echo "OK";
 		}

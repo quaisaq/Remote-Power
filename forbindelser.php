@@ -35,10 +35,10 @@
 					$file2 = file('database/navne.txt', FILE_SKIP_EMPTY_LINES);
 					
 					foreach ($file as $line => $val) {
-						$split = explode("=", $val);
-						$split2 = explode("=", $file2[$line]);
+						$split = explode("=", rtrim($val));
+						$split2 = explode("=", rtrim($file2[$line]));
 						echo '<div class="socket">';
-						echo '<div class="name">Stikdåse ' . ($line + 1) . ': <span class="place">(' . $split2[1] . ')</span></div>';
+						echo '<div class="name">Lys ' . ($line + 1) . ': <span class="place">(' . $split2[1] . ')</span></div>';
 						echo '<div class="onoff"';
 						if ($split[1] == 1)
 							echo ' style="background: #46ff3e;"><div class="toggler" style="left: 49px;"';
