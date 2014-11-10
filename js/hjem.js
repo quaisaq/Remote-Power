@@ -1,6 +1,6 @@
 var sockets = new Array(false, false, false, false, false);
-var canvas;
-var ctx;
+var canvas = null;
+var ctx = null;
 var canvasSize = new Array(0, 0);
 var rectSizes = new Array(new Array(0,0,233,139), new Array(404,0,560,280), new Array(328,281,559,466), new Array(0,281,232,466), new Array(0,140,403,280), new Array(234,0,403,140));
 var rectIndexes = new Array(0, 1, 2, 3, 4, 4);
@@ -36,28 +36,28 @@ $(function(){
 });
 
 function toggleSocket(i){
-	$.post('toggleSocket.php', 'area=' + i, function(d){
+	var toggleTo = !sockets[i];
+	$.post('toggleSocket.php', 'area=' + i + '=' + (toggleTo ? "1" : "0"), function(d){
 		if (d == "OK") {
-			sockets[i] = !sockets[i];
+			sockets[i] = toggleTo;
 			drawSocket(i);
-		}
-		else {
-			
 		}
 	});
 	
 }
 
 function drawSocket(i) {
-	var indexes = new Array();
-	for (var l = 0; l < rectIndexes.length; l++)
-		if (rectIndexes[l] == i)
-			indexes.push(l);
-	
-	for (var l = 0; l < indexes.length; l++)
-		ctx.clearRect(rectSizes[indexes[l]][0], rectSizes[indexes[l]][1], rectSizes[indexes[l]][2] - rectSizes[indexes[l]][0], rectSizes[indexes[l]][3] - rectSizes[indexes[l]][1]);
-	
-	ctx.fillStyle = sockets[i] ? "rgba(0, 255, 0, 0.5)" : "#bfbfbf";
-	for (var l = 0; l < indexes.length; l++)
-		ctx.fillRect(rectSizes[indexes[l]][0], rectSizes[indexes[l]][1], rectSizes[indexes[l]][2] - rectSizes[indexes[l]][0], rectSizes[indexes[l]][3] - rectSizes[indexes[l]][1]);
+	if (ctx != null) {
+		var indexes = new Array();
+		for (var l = 0; l < rectIndexes.length; l++)
+			if (rectIndexes[l] == i)
+				indexes.push(l);
+		
+		for (var l = 0; l < indexes.length; l++)
+			ctx.clearRect(rectSizes[indexes[l]][0], rectSizes[indexes[l]][1], rectSizes[indexes[l]][2] - rectSizes[indexes[l]][0], rectSizes[indexes[l]][3] - rectSizes[indexes[l]][1]);
+		
+		ctx.fillStyle = sockets[i] ? "#6ff76d" : "#bfbfbf";
+		for (var l = 0; l < indexes.length; l++)
+			ctx.fillRect(rectSizes[indexes[l]][0], rectSizes[indexes[l]][1], rectSizes[indexes[l]][2] - rectSizes[indexes[l]][0], rectSizes[indexes[l]][3] - rectSizes[indexes[l]][1]);
+	}
 }

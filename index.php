@@ -6,6 +6,22 @@
 	<head>
 		<?php require_once('include/head.php'); ?>
 		<script type="text/javascript" src="js/hjem.js"></script>
+		<script type="text/javascript">
+			sockets = new Array(<?php
+				$file = file('database/online.txt', FILE_SKIP_EMPTY_LINES);
+				if ($file) {
+					foreach ($file as $lin => $val) {
+						$split = explode('=', rtrim($val));
+						if ($lin == 0)
+							echo $split[1];
+						else
+							echo ", " . $split[1];
+					}
+				}
+				else
+					echo "false, false, false, false, false";
+			?>);
+		</script>
 	</head>
 	<body>
 		<div id="background"></div>

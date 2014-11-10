@@ -1,5 +1,7 @@
 <?php
 	if (isset($_POST['area'])) {
+		$exploded = explode('=', $_POST['area']);
+		$i = $exploded[0];
 		$file = file('database/online.txt', FILE_SKIP_EMPTY_LINES);
 		$arr = Array();
 		
@@ -9,7 +11,7 @@
 				$arr[] = $split[1];
 			}
 			
-			$arr[$_GET['i']] = $arr[$_GET['i']] == 1 ? "0" : "1";
+			$arr[$i] = $exploded[1];
 			$s = "";
 			foreach ($arr as $lin => $val)
 				$s .= $lin . '=' . $val . "\r\n";
@@ -17,7 +19,7 @@
 			
 			// send command to Python
 			exec("cd /var/www/remotepower/");
-			exec("./wrapper " . $_GET['i'] . " " . $arr[$_GET['i']]);
+			exec("./wrapper " . $i . " " . $arr[$i]);
 			
 			echo "OK";
 		}
