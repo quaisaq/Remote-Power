@@ -1,0 +1,13 @@
+RewriteEngine On
+RewriteBase /
+
+RewriteCond %{QUERY_STRING} (^|&)noredirect=true(&|$)
+RewriteRule ^ - [CO=mobileRedirect:0:%{HTTP:HOST},S]
+
+RewriteCond %{HTTP:x-wap-profile}	!^$ [OR]
+RewriteCond %{HTTP:Profile}			!^$
+RewriteCond %{REQUEST_URI}			!^\/m\/
+RewriteCond %{HTTP:Cookie}			!\smobileRedirect=0(;|$)
+RewriteRule ^ m%{REQUEST_URI} [R,L]
+
+RewriteRule ^/?([a-z]+)$ $1.php [L]

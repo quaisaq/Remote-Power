@@ -17,7 +17,7 @@
 	left: 0;
 	right: 0;
 	z-index: -1;
-	background: rgba(28,28,28,0.96);
+	background: #f0fafb;
 	background: linear-gradient(to top, #fff 50%, #e1f6f7 100%);
 }
 
@@ -27,7 +27,6 @@ header {
 	pointer-events: none;
 	padding: 20px;
 	background: #444;
-	font-family: 'Open Sans';
 	height: 38px;
 }
 
@@ -39,9 +38,9 @@ header ul {
 }
 
 header li {
-	float: left;
 	margin-right: 10px;
-	display: block;
+	display: inline-block;
+	white-space: normal;	
 	color: #aaa;
 	font-size: 14px;
 	padding: 10px 20px;
@@ -68,7 +67,6 @@ header a {
 #rightfloater {
 	float: right;
 	width: 150px;
-	transform: scaleX(-1);
 }
 
 /* ### CONTENT ### */
@@ -78,7 +76,6 @@ header a {
 	padding: 20px;
 	float: right;
 	background-color: #ddf0da;
-	font-family: 'Open Sans';
 	width: 360px;
 }
 
@@ -88,7 +85,16 @@ header a {
 }
 
 /* # GLOBALS # */
-* { margin: 0; padding: 0; }
+* {
+	margin: 0;
+	padding: 0;
+	outline: none;
+}
+
+body {
+	font-family: "open sans";
+}
+
 #loginback input.text {
 	padding: 1px 5px;
 	height: 40px;

@@ -17,16 +17,14 @@
 	left: 0;
 	right: 0;
 	z-index: -1;
-	background: rgba(28,28,28,0.96);
+	background: #f0fafb;
 	background: linear-gradient(to top, #fff 50%, #e1f6f7 100%);
 }
 
 /* ## HEADER ## */
-
 header {
 	padding: 20px;
 	background: #444;
-	font-family: 'Open Sans';
 	height: 38px;
 }
 
@@ -35,16 +33,22 @@ header.disabled {
 	pointer-events: none;
 }
 
-header ul {
-	position: absolute;
+header .nav {
+	position: absolute;	
+	overflow: hidden;	
+	white-space: nowrap;	
 	list-style: none;
-	overflow: hidden;
-	left: 50%;
+	left: 0;
 }
 
-header li {
-	float: left;
+header .nav .but {
 	margin-right: 10px;
+	white-space: normal;
+	display: inline-block;
+	margin-right: 10px;
+}
+header .nav .but.last {
+	margin-right: 0 !important;
 }
 
 header a {
@@ -85,7 +89,6 @@ header a.active, header a:active {
 #rightfloater {
 	float: right;
 	width: 150px;
-	transform: scaleX(-1);
 }
 
 /* ### CONTENT ### */
@@ -93,8 +96,9 @@ header a.active, header a:active {
 	margin-top: 20px;
 	float: right;
 	background-color: #ddf0da;
-	min-height: 550px;
-	width: 600px;
+	min-height: 510px;
+	padding: 20px;
+	width: 560px;
 }
 
 /* # HELPERS # */
@@ -102,5 +106,63 @@ header a.active, header a:active {
 	clear: both;	
 }
 
-/* # GLOBALS # */
-* { margin: 0; padding: 0; }
+/* # TAG CHANGES # */
+* {
+	margin: 0;
+	padding: 0;
+	outline: none;
+}
+
+body {
+	font-family: "open sans";
+}
+
+#innerback .socket {
+	text-shadow: 1px 1px 1px white;
+	height: 30px;
+	margin-bottom: 5px;
+}
+
+.onoff {
+	float: right;
+	width: 100px;
+	height: 30px;
+	background: #FaFaFa;
+	border-radius: 15px;
+	border: 1px solid #bfbfbf;
+	position: relative;
+	transition: background .5s;	
+}
+
+#innerback .name {
+	float: left;
+	line-height: 30px;
+}
+
+#innerback .onoff .toggler {
+	position: absolute;
+	left: -1px;
+	border-right: 1px solid #bfbfbf;
+	border-left: 1px solid #bfbfbf;
+	/*border-top: 1px solid #bfbfbf;
+	border-bottom: 1px solid #bfbfbf;*/
+	border-radius: 14px;
+	height: 30px;
+	width: 50px;
+	cursor: pointer;
+	background: #f5f5f5;
+}
+
+.house {
+	position: absolute;
+	z-index: 20;
+}
+
+#grundplansCanvas {
+	z-index; 19;
+	position: absolute;
+}
+
+#innerback .socket .place {
+	color: gray;
+}
