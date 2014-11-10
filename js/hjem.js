@@ -16,7 +16,8 @@ $(function(){
 	$('#rightfloater .mids').html(mids.replace(/\-left\-/gi, "-right-"));
 	
 	$('header .nav').css('margin-left', -$('header .nav').width() / 2).css('left', '50%');
-	$('img.house').width($('#innerback').width());	
+	
+	$('img.house').width($('#innerback').width());
 	setTimeout(function(){
 		canvasSize = new Array($('img.house').width(), $('img.house').height());
 		$('#grundplansCanvas').attr('width', canvasSize[0]).attr('height', canvasSize[1]);

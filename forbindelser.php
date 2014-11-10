@@ -13,6 +13,13 @@
 			<?php include_once('include/sidefloaters.php'); ?>
 			<div id="innerback">
 				<h1>Forbindelsesoversigt</h1>
+				<?php
+					$file = file('database/online.txt', FILE_SKIP_EMPTY_LINES);
+					
+					foreach ($file as $line => $val) {
+					
+					}
+				?>
 				<div class="socket">
 					<div class="name">Stikdåse 1: <span class="place">(Køkken)</span></div>
 					<div class="onoff">

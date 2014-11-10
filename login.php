@@ -1,3 +1,15 @@
+<?php
+	session_start();
+	if (isset($_POST['user']) && isset($_POST['pass'])) {
+		if (strtolower($_POST['user']) == "admin" && $_POST['pass'] == "admin") {
+			$_SESSION['LOGGEDIN'] = 1;
+			Header('Location: ./');
+		}
+		else {
+			$msg = "Forkert brugernavn eller password";
+		}
+	}
+?>
 <html>
 	<head>
 		<title>Login</title>
@@ -12,7 +24,7 @@
 				$('#leftfloater .mids').html(mids);
 				$('#rightfloater .mids').html(mids.replace(/\-left\-/gi, "-right-"));
 				
-				$('header ul').css('margin-left', -$('header ul').width() / 2);
+				$('header .nav').css('margin-left', -$('header .nav').width() / 2).css('left', '50%');
 			});
 		</script>
 	</head>
@@ -22,12 +34,16 @@
 		<div id="wrapper">
 			<?php include_once('include/sidefloaters.php'); ?>
 			<div id="loginback">
-				<form action="./index.html" method="POST">
+				<?php
+					if (isset($msg))
+						echo "<div class=\"msg\">$msg</div>";
+				?>
+				<form action="./login.php" method="POST">
 					<div class="inputtop">Brugernavn:</div>
-					<input name="user" class="text">
+					<input name="user" class="text" autocomplete="off">
 					
 					<div class="inputtop">Password:</div>
-					<input name="pass" type="password" class="text">
+					<input name="pass" type="password" class="text" autocomplete="off">
 					
 					<input type="submit" class="submit" value="Log ind">
 				</form>
